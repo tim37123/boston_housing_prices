@@ -2178,7 +2178,7 @@ Y4wxQeH/A0YFqWcBBswfAAAAAElFTkSuQmCC
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong> 
 With limited depth the model suffers from bias. The curves will be close together but the score will be low</p>
-<p>With too much depth the model suffers from overfit. In this case you'll notice a sizable gap between curves (validation curve will be much lower than training)</p>
+<p>With too much depth the model suffers from overfit. In this case you'll notice a sizable gap between curves (validation curve will be much lower than training). Overfitting results in high vairance and low bias.</p>
 <p>Both cases cause the score to suffer, so you see the initial low score, then the decreasing score as the depth passes a certain point (looks to be 4) as an indiator for the 2 circumstances.</p>
 
 </div>
@@ -2255,9 +2255,10 @@ With limited depth the model suffers from bias. The curves will be close togethe
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong> 
 What is the k-fold cross-validation training technique?
-K fold breaks the set into multiple "bins", allowing for several different train/test experiments. This leads to a better train/test grouping and as a result better performance. The risk with k-fold is that if the data is not properly randomized you may end up with poor train/test splits all around.</p>
+K fold breaks the set into multiple "bins", allowing for several different train/test experiments. This leads to a better train/test grouping and as a result better performance. Assuming there are k bins, k-1 bins are used for training, and the remaining build for testing. The risk with k-fold is that if the data is not properly randomized you may end up with poor train/test splits all around.</p>
 <p>What benefit does this technique provide for grid search when optimizing a model?
 In general K-fold helps when data is limited, as it allows us to both train and test on the whole set. This value extends to grid search optimization.</p>
+<p>Further, with grid search, using cross validation ensures sufficient diversity to prevent grid search from building a model that's too specific to a certain training set. If you use grid search without cross-validation, you get values that may not apply well outside of the training set.</p>
 
 </div>
 </div>
